@@ -9,7 +9,9 @@ In this paper you should also include theoretical considerations, examples of Py
 The final results should be clearly stated.
 
 
-# Locally Weighted Regression and Random Forest
+## Locally Weighted Regression (Loess)
+
+## Random Forest
 
 ### Python code
 ```python
