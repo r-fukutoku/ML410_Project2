@@ -10,10 +10,49 @@ The final results should be clearly stated.
 
 
 ## Locally Weighted Regression (Loess)
+The main idea of linear regression is the assumption that:
+
+𝑦=𝑋⋅𝛽+𝜎𝜖 
+
+If we pre-multiply this equation with a matrix of weights (the "weights" are on the main diagonal and the rest of the elements are 0) we get:
+
+𝑊(𝑖)𝑦=𝑊(𝑖)𝑋⋅𝛽+𝜎𝑊(𝑖)𝜖 
+
+The distancfe bw two independent observation is the Euclidean distance bw the two represented  𝑝− dimensional vectors. The equation is:
+
+𝑑𝑖𝑠𝑡(𝑣⃗ ,𝑤⃗ )=(𝑣1−𝑊1)2+(𝑣2−𝑊2)2+...(𝑣𝑝−𝑊𝑝)2‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾√ 
+
+We shall have  𝑛  differrent weight vectors because we have  𝑛  different observations.
+
+Important aspect: linear regression can be seen as a linear combination of the observed outputs (values of the dependent variable).
+
+We have:
+
+𝑋𝑇𝑦=𝑋𝑇𝑋𝛽+𝜎𝑋𝑇𝜖 
+
+We solve for  𝛽  (by assuming that  𝑋𝑇𝑋  is invertible):
+
+𝛽=(𝑋𝑇𝑋)−1(𝑋𝑇𝑦)−𝜎(𝑋𝑇𝑋)−1𝑋𝑇𝜖 
+
+We take the expected value of this equation and obtain:
+
+𝛽¯=(𝑋𝑇𝑋)−1(𝑋𝑇𝑦) 
+
+Therefore the predictions we make are:
+
+𝑦̂ =(𝑋𝑇𝑋)−1(𝑋𝑇𝑦) 
+
+The big Idea: the predictions we make are a linear combination of the actual observed values of the dependent valuable!
+
+For locally weighted regression,  𝑦̂   is pbtained as a different linear combination of the values of y.
 
 ## Random Forest
 
-### Python code
+
+
+
+
+## Applications with Real Data
 ```python
 %matplotlib inline
 %config InlineBackend.figure_format = 'retina'
