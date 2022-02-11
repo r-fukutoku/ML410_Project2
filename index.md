@@ -1,3 +1,37 @@
+Create a new Github page with a presentation on the concepts of Locally Weighted Regression and Random Forest. 
+
+Apply the regression methods to real data sets, such as "Cars" or "Boston Housing Data" where you consider only one input variable 
+(the weight of the car for the "Cars" data set and the number of rooms for the "Boston Hausing" data). 
+The output varable is the mileage for the "Cars" data set and "cmedv" or the median price for the housing data.
+
+For each method and data set report the crossvalidated mean square error and determine which method is achieveng the better results.
+In this paper you should also include theoretical considerations, examples of Python coding and plots. 
+The final results should be clearly stated.
+
+
+# Locally Weighted Regression and Random Forest
+
+### Python code
+```python
+%matplotlib inline
+%config InlineBackend.figure_format = 'retina'
+import matplotlib.pyplot as plt
+import matplotlib as mpl
+mpl.rcParams['figure.dpi'] = 120
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/r-fukutoku/Project2/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
