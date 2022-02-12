@@ -178,7 +178,7 @@ for idxtrain,idxtest in kf.split(x):
   mse_rf.append(mse(ytest,yhat_rf))
 ```
 
-#### Final results: 
+### Final results: 
 
 ```python
 np.mean(mse_lwr)
@@ -194,7 +194,7 @@ np.mean(mse_rf)
 
 
 
-## Reference for Regressions
+## References
 Bakshi, C. (Jun 8, 2020). _Medium_.
 https://levelup.gitconnected.com/random-forest-regression-209c0f354c84
 
