@@ -196,7 +196,7 @@ np.mean(mse_rf)
 ```
 18.3197148440588
 
-##### Since we aim to minimize the crossvalidated mean square error (MSE) for the better results, I conclude that Locally Weighted Regression achieved the better result than Randam Forest. 
+Since we aim to minimize the crossvalidated mean square error (MSE) for the better results, I conclude that Locally Weighted Regression achieved the better result than Randam Forest. 
 
 
 
