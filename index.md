@@ -160,10 +160,6 @@ dat_test = np.column_stack([xtest_scale,ytest,yhat_test])
 
 sorted_dat_test = dat_test[np.argsort(dat_test[:,0])]
 
-kf = KFold(n_splits=10,shuffle=True,random_state=310)
-mse_lwr = []
-mse_rf = []
-
 mse_lwr = []
 mse_rf = []
 
@@ -180,6 +176,9 @@ for idxtrain,idxtest in kf.split(x):
   mse_lwr.append(mse(ytest,yhat_lwr))
   mse_rf.append(mse(ytest,yhat_rf))
 ```
+
+#### Final results: 
+
 ```python
 np.mean(mse_lwr)
 ```
@@ -190,12 +189,7 @@ np.mean(mse_rf)
 ```
 18.3197148440588
 
- 
-#### Final results: 
-The crossvalidated mean square error 
-determine which method is achieveng the better results.
-
-
+##### Since we aim to minimize the crossvalidated mean square error (MSE) for the better results, I conclude that locally weighted regression achieved the better result than randam forest. 
 
 
 
