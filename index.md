@@ -8,9 +8,9 @@ For each method and data set report the crossvalidated mean square error and det
 In this paper you should also include theoretical considerations, examples of Python coding and plots. 
 The final results should be clearly stated.
 
-# - Locally Weighted Regression & Random Forest -
+# Locally Weighted Regression & Random Forest
 
-## Locally Weighted Regression (Loess)
+## Locally Weighted Regression (abreviated "loess" ; "lowess")
 The main idea of linear regression is the assumption that:
 
 
@@ -124,11 +124,70 @@ plt.plot(xnew,yhat,color='red',lw=2)
 ![image](https://user-images.githubusercontent.com/98488324/153694807-2bc7665e-df35-4703-a756-44192ccd0ac5.png)
 
 
+```python
+xtrain, xtest, ytrain, ytest = tts(x,y,test_size=0.25, random_state=123)
+
+scale = StandardScaler()
+xtrain_scaled = scale.fit_transform(xtrain.reshape(-1,1))
+xtest_scaled = scale.transform(xtest.reshape(-1,1))
+
+yhat_test = lowess_reg(xtrain_scaled.ravel(),ytrain,xtest_scaled,tricubic,0.1)
+
+mse(yhat_test,ytest)
+```
+15.961885966790936
+
+
+```python
+plt.plot(np.sort(xtest_scale.ravel()),yhat_test)
+```
+![image](https://user-images.githubusercontent.com/98488324/153695299-b5a1f418-3757-4854-ab90-0a4184959d79.png)
+
+
 #### Random Forest:
+```python
+rf = RandomForestRegressor(n_estimators=100,max_depth=3)
+rf.fit(xtrain_scaled,ytrain)
 
+mse(ytest,rf.predict(xtest_scale))
+```
+15.931305250431844
 
+```python
+yhat_test = lowess_reg(xtrain_scaled.ravel(),ytrain,xtest_scale.ravel(),tricubic,0.1)
 
+dat_test = np.column_stack([xtest_scale,ytest,yhat_test])
 
+sorted_dat_test = dat_test[np.argsort(dat_test[:,0])]
+
+kf = KFold(n_splits=10,shuffle=True,random_state=310)
+mse_lwr = []
+mse_rf = []
+
+mse_lwr = []
+mse_rf = []
+
+for idxtrain,idxtest in kf.split(x):
+  ytrain = y[idxtrain]
+  xtrain = x[idxtrain]
+  xtrain = scale.fit_transform(xtrain.reshape(-1,1))
+  ytest = y[idxtest]
+  xtest = x[idxtest]
+  xtest = scale.transform(xtest.reshape(-1,1))
+  yhat_lwr = lowess_reg(xtrain.ravel(),ytrain,xtest.ravel(),tricubic,0.5)
+  rf.fit(xtrain,ytrain)
+  yhat_rf = rf.predict(xtest)
+  mse_lwr.append(mse(ytest,yhat_lwr))
+  mse_rf.append(mse(ytest,yhat_rf))
+  
+np.mean(mse_lwr)
+```
+17.584499477691253
+
+```python
+np.mean(mse_rf)
+```
+18.3197148440588
 
  
 #### Final results: 
