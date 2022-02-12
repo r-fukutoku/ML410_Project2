@@ -59,7 +59,7 @@ By default, the decision trees we use here will make their predictions based on 
 
 
 ### Applications with Real Data
-Cars Data (output varable is the mileage): 
+Cars Data (output varable (y) is the mileage (MPG)): 
 
 ```python
 import numpy as np
