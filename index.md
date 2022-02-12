@@ -10,7 +10,7 @@ The final results should be clearly stated.
 
 # Locally Weighted Regression & Random Forest
 
-## Locally Weighted Regression (abreviated "loess" ; "lowess")
+## Locally Weighted Regression (Abbreviated "loess" ; "lowess")
 The main idea of linear regression is the assumption that:
 
 
@@ -179,7 +179,8 @@ for idxtrain,idxtest in kf.split(x):
   yhat_rf = rf.predict(xtest)
   mse_lwr.append(mse(ytest,yhat_lwr))
   mse_rf.append(mse(ytest,yhat_rf))
-  
+```
+```python
 np.mean(mse_lwr)
 ```
 17.584499477691253
