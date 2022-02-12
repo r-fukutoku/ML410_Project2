@@ -123,9 +123,7 @@ plt.scatter(x,y)
 plt.plot(xnew,yhat,color='red',lw=2)
 ```
 
-![image](https://user-images.githubusercontent.com/98488324/153694807-2bc7665e-df35-4703-a756-44192ccd0ac5.png)
 <img width="644" alt="image" src="https://user-images.githubusercontent.com/98488324/153696320-25bb092f-ef78-4f8b-b819-41dd99550893.png">
-
 
 
 ```python
