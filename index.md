@@ -3,7 +3,7 @@
 ### Locally Weighted Regression (Abbreviated "loess" ; "lowess")
 Locally Weighted Regression is a non-parametric regression method that combines multiple regression models in a meta-model based on k-nearest neighbor. It addresses situations in which the classical procedures do not perform well or cannot be effectively applied without undue labor. 
 
-Locally Weighted Regression combines much of the simplicity of linear least squares regression with the flexibility of nonlinear regression. 
+Loess combines much of the simplicity of linear least squares regression with the flexibility of nonlinear regression. 
 It does this by fitting simple models to localized subsets of the data to build up a function that describes the variation in the data, point by point.
 
 With an equation, the main idea of linear regression can be expressed as the assumption that:
