@@ -53,19 +53,87 @@ By default, the decision trees we use here will make their predictions based on 
 
 
 ## Applications with Real Data
+Cars Data (output varable is the mileage): 
+
+```python
+import numpy as np
+import matplotlib as mpl
+import matplotlib.pyplot as plt
+import pandas as pd
+cars = pd.read_csv("drive/MyDrive/DATA410_AdvML/cars.csv")
+```
+<img width="234" alt="image" src="https://user-images.githubusercontent.com/98488324/153694695-0e275da1-6379-44db-af1b-92a43d0c0544.png">
+
+
+#### Locally Weighted Regression:
+
 ```python
 %matplotlib inline
 %config InlineBackend.figure_format = 'retina'
 import matplotlib.pyplot as plt
 import matplotlib as mpl
 mpl.rcParams['figure.dpi'] = 120
+
+import numpy as np
+import pandas as pd
+from math import ceil
+from scipy import linalg
+import matplotlib.pyplot as plt
+from scipy.interpolate import interp1d
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.linear_model import LinearRegression
+
+# Tricubic Kernel
+def tricubic(x):
+  return np.where(np.abs(x)>1,0,70/81*(1-np.abs(x)**3)**3)
+
+def lowess_reg(x, y, xnew, kern, tau):
+    # tau is called bandwidth K((x-x[i])/(2*tau))
+    # IMPORTANT: we expect x to the sorted increasingly
+    n = len(x)
+    yest = np.zeros(n)
+
+    #Initializing all weights from the bell shape kernel function    
+    w = np.array([kern((x - x[i])/(2*tau)) for i in range(n)])     
+    
+    #Looping through all x-points
+    for i in range(n):
+        weights = w[:, i]
+        b = np.array([np.sum(weights * y), np.sum(weights * y * x)])
+        A = np.array([[np.sum(weights), np.sum(weights * x)],
+                    [np.sum(weights * x), np.sum(weights * x * x)]])
+        #theta = linalg.solve(A, b) # A*theta = b
+        theta, res, rnk, s = linalg.lstsq(A, b)
+        yest[i] = theta[0] + theta[1] * x[i] 
+    f = interp1d(x, yest,fill_value='extrapolate')
+    return f(xnew)
+    
+x = cars['WGT'].values
+y = cars['MPG'].values
+
+lowess_reg(x,y,2100,tricubic,0.01)
+
+xnew = np.arange(1500,5500,10) 
+yhat = lowess_reg(x,y,xnew,tricubic,80)
+
+plt.scatter(x,y)
+plt.plot(xnew,yhat,color='red',lw=2)
+
 ```
 
+![image](https://user-images.githubusercontent.com/98488324/153694807-2bc7665e-df35-4703-a756-44192ccd0ac5.png)
+
+
+#### Random Forest:
 
 
 
 
 
+ 
+### Final results: 
+The crossvalidated mean square error 
+determine which method is achieveng the better results.
 
 
 
@@ -79,8 +147,8 @@ Sicotte, X. (May 24, 2018).
 https://xavierbourretsicotte.github.io/loess.html
 
 
-### Jekyll Themes
+#### Jekyll Themes
 Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/r-fukutoku/Project2/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
 
-### Support or Contact
+#### Support or Contact
 Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
