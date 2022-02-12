@@ -8,20 +8,17 @@ For each method and data set report the crossvalidated mean square error and det
 In this paper you should also include theoretical considerations, examples of Python coding and plots. 
 The final results should be clearly stated.
 
-# - Locally Weighted Regression and Random Forest -
+# - Locally Weighted Regression & Random Forest -
 
 ## Locally Weighted Regression (Loess)
 The main idea of linear regression is the assumption that:
 
-𝑦=𝑋⋅𝛽+𝜎𝜖 
 
 If we pre-multiply this equation with a matrix of weights (the "weights" are on the main diagonal and the rest of the elements are 0) we get:
 
-𝑊(𝑖)𝑦=𝑊(𝑖)𝑋⋅𝛽+𝜎𝑊(𝑖)𝜖 
 
-The distancfe bw two independent observation is the Euclidean distance bw the two represented  𝑝− dimensional vectors. The equation is:
+The distancfe between two independent observations is the Euclidean distance bw the two represented  𝑝− dimensional vectors. The equation is:
 
-𝑑𝑖𝑠𝑡(𝑣⃗ ,𝑤⃗ )=(𝑣1−𝑊1)2+(𝑣2−𝑊2)2+...(𝑣𝑝−𝑊𝑝)2‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾√ 
 
 We shall have  𝑛  differrent weight vectors because we have  𝑛  different observations.
 
@@ -29,23 +26,20 @@ Important aspect: linear regression can be seen as a linear combination of the o
 
 We have:
 
-𝑋𝑇𝑦=𝑋𝑇𝑋𝛽+𝜎𝑋𝑇𝜖 
 
 We solve for  𝛽  (by assuming that  𝑋𝑇𝑋  is invertible):
 
-𝛽=(𝑋𝑇𝑋)−1(𝑋𝑇𝑦)−𝜎(𝑋𝑇𝑋)−1𝑋𝑇𝜖 
 
 We take the expected value of this equation and obtain:
 
-𝛽¯=(𝑋𝑇𝑋)−1(𝑋𝑇𝑦) 
 
 Therefore the predictions we make are:
 
-𝑦̂ =(𝑋𝑇𝑋)−1(𝑋𝑇𝑦) 
 
 The big Idea: the predictions we make are a linear combination of the actual observed values of the dependent valuable!
 
 For locally weighted regression,  𝑦̂   is pbtained as a different linear combination of the values of y.
+
 
 ## Random Forest
 Random Forest Regression is a supervised learning algorithm that uses ensemble learning method for regression. Ensemble learning method is a technique that combines predictions from multiple machine learning algorithms to make a more accurate prediction than a single model.
@@ -80,6 +74,9 @@ mpl.rcParams['figure.dpi'] = 120
 ## Reference for Regressions
 Bakshi, C. (Jun 8, 2020). _Medium_.
 https://levelup.gitconnected.com/random-forest-regression-209c0f354c84
+
+Sicotte, X. (May 24, 2018).
+https://xavierbourretsicotte.github.io/loess.html
 
 
 ### Jekyll Themes
