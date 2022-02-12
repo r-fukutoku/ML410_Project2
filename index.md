@@ -8,6 +8,7 @@ For each method and data set report the crossvalidated mean square error and det
 In this paper you should also include theoretical considerations, examples of Python coding and plots. 
 The final results should be clearly stated.
 
+# Machine Learning - Locally Weighted Regression and Random Forest -
 
 ## Locally Weighted Regression (Loess)
 The main idea of linear regression is the assumption that:
@@ -47,8 +48,13 @@ The big Idea: the predictions we make are a linear combination of the actual obs
 For locally weighted regression,  𝑦̂   is pbtained as a different linear combination of the values of y.
 
 ## Random Forest
+Random Forest Regression is a supervised learning algorithm that uses ensemble learning method for regression. Ensemble learning method is a technique that combines predictions from multiple machine learning algorithms to make a more accurate prediction than a single model.
 
+![image](https://user-images.githubusercontent.com/98488324/153693726-36f3fe10-9648-4606-92cb-293b6c78a9dd.png)
 
+The diagram above shows the structure of a Random Forest. You can notice that the trees run in parallel with no interaction amongst them. A Random Forest operates by constructing several decision trees during training time and outputting the mean of the classes as the prediction of all the trees.
+
+By default, the decision trees we use here will make their predictions based on the mean value of the target within each leaf of the tree, and the splitting criteria will be based on minimizing the MSE.
 
 
 
@@ -71,42 +77,13 @@ mpl.rcParams['figure.dpi'] = 120
 
 
 
+## Reference for Regressions
+Bakshi, C. (Jun 8, 2020). _Medium_.
+https://levelup.gitconnected.com/random-forest-regression-209c0f354c84
 
-
-## Welcome to GitHub Pages
-
-You can use the [editor on GitHub](https://github.com/r-fukutoku/Project2/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
 
 ### Jekyll Themes
-
 Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/r-fukutoku/Project2/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
 
 ### Support or Contact
-
 Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
