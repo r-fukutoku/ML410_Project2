@@ -195,7 +195,7 @@ np.mean(mse_rf)
 
 
 
-### Reference for Regressions
+## Reference for Regressions
 Bakshi, C. (Jun 8, 2020). _Medium_.
 https://levelup.gitconnected.com/random-forest-regression-209c0f354c84
 
