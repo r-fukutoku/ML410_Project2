@@ -1,16 +1,10 @@
-Create a new Github page with a presentation on the concepts of Locally Weighted Regression and Random Forest. 
-
-Apply the regression methods to real data sets, such as "Cars" or "Boston Housing Data" where you consider only one input variable 
-(the weight of the car for the "Cars" data set and the number of rooms for the "Boston Hausing" data). 
-The output varable is the mileage for the "Cars" data set and "cmedv" or the median price for the housing data.
-
-For each method and data set report the crossvalidated mean square error and determine which method is achieveng the better results.
-In this paper you should also include theoretical considerations, examples of Python coding and plots. 
-The final results should be clearly stated.
-
 # Locally Weighted Regression & Random Forest
 
 ## Locally Weighted Regression (Abbreviated "loess" ; "lowess")
+LOESS or LOWESS are non-parametric regression methods that combine multiple regression models in a k-nearest-neighbor-based meta-model. They address situations in which the classical procedures do not perform well or cannot be effectively applied without undue labor. LOESS combines much of the simplicity of linear least squares regression with the flexibility of nonlinear regression. It does this by fitting simple models to localized subsets of the data to build up a function that describes the variation in the data, point by point.
+
+
+
 The main idea of linear regression is the assumption that:
 
 
@@ -41,14 +35,15 @@ The big Idea: the predictions we make are a linear combination of the actual obs
 For locally weighted regression,  𝑦̂   is pbtained as a different linear combination of the values of y.
 
 
+
 ## Random Forest
-Random Forest Regression is a supervised learning algorithm that uses ensemble learning method for regression. Ensemble learning method is a technique that combines predictions from multiple machine learning algorithms to make a more accurate prediction than a single model.
+Random Forest Regression is a supervised learning algorithm that utilizes ensemble learning method for regression. Ensemble learning method is a technique that combines predictions from multiple machine learning algorithms to make a more accurate prediction than a single model.
 
 ![image](https://user-images.githubusercontent.com/98488324/153693726-36f3fe10-9648-4606-92cb-293b6c78a9dd.png)
 
-The diagram above shows the structure of a Random Forest. You can notice that the trees run in parallel with no interaction amongst them. A Random Forest operates by constructing several decision trees during training time and outputting the mean of the classes as the prediction of all the trees.
+This is the basic structure of a Random Forest. The trees are parallel with no interaction amongst them. A Random Forest operates by constructing several decision trees during training time and outputting the mean of the classes as the prediction of all the trees. 
 
-By default, the decision trees we use here will make their predictions based on the mean value of the target within each leaf of the tree, and the splitting criteria will be based on minimizing the MSE.
+By default, the decision trees we use here will make their predictions based on the mean value of the target within each leaf of the tree, and the splitting criteria will be based on minimizing the mean square error, MSE.
 
 
 
@@ -74,6 +69,7 @@ import matplotlib.pyplot as plt
 import matplotlib as mpl
 mpl.rcParams['figure.dpi'] = 120
 
+# import libraries
 import numpy as np
 import pandas as pd
 from math import ceil
@@ -189,7 +185,7 @@ np.mean(mse_rf)
 ```
 18.3197148440588
 
-##### Since we aim to minimize the crossvalidated mean square error (MSE) for the better results, I conclude that locally weighted regression achieved the better result than randam forest. 
+#### Since we aim to minimize the crossvalidated mean square error (MSE) for the better results, I conclude that Locally Weighted Regression achieved the better result than Randam Forest. 
 
 
 
