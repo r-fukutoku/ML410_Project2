@@ -7,7 +7,7 @@ Locally Weighted Regression combines much of the simplicity of linear least squa
 
 It does this by fitting simple models to localized subsets of the data to build up a function that describes the variation in the data, point by point.
 
-With the equations, the main idea of linear regression can be expressed as the assumption that:
+With an equation, the main idea of linear regression can be expressed as the assumption that:
 
 <img width="217" alt="image" src="https://user-images.githubusercontent.com/98488324/153696127-71453565-f03a-4b04-bddf-9512e2e60332.png">
 
@@ -20,7 +20,9 @@ The distance between two independent observations is the Euclidean distance betw
 <img width="651" alt="image" src="https://user-images.githubusercontent.com/98488324/153696145-f262158e-dd10-47d4-a9b8-cc5b133fb807.png">
 
 We shall have  𝑛  differrent weight vectors because we have  𝑛  different observations.
+
 __Important aspect__: linear regression can be seen as a linear combination of the observed outputs (values of the dependent variable).
+
 We have:
 
 <img width="276" alt="image" src="https://user-images.githubusercontent.com/98488324/153696158-eb25a77b-e093-41fb-8c17-3463d390becf.png">
