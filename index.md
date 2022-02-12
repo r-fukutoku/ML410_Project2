@@ -8,7 +8,7 @@ For each method and data set report the crossvalidated mean square error and det
 In this paper you should also include theoretical considerations, examples of Python coding and plots. 
 The final results should be clearly stated.
 
-# Machine Learning - Locally Weighted Regression and Random Forest -
+# - Locally Weighted Regression and Random Forest -
 
 ## Locally Weighted Regression (Loess)
 The main idea of linear regression is the assumption that:
