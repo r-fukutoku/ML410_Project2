@@ -1,37 +1,43 @@
 # Locally Weighted Regression & Random Forest
 
 ## Locally Weighted Regression (Abbreviated "loess" ; "lowess")
-LOESS or LOWESS are non-parametric regression methods that combine multiple regression models in a k-nearest-neighbor-based meta-model. They address situations in which the classical procedures do not perform well or cannot be effectively applied without undue labor. LOESS combines much of the simplicity of linear least squares regression with the flexibility of nonlinear regression. It does this by fitting simple models to localized subsets of the data to build up a function that describes the variation in the data, point by point.
+Locally Weighted Regression is a non-parametric regression method that combines multiple regression models in a k-nearest-neighbor-based meta-model. It addresses situations in which the classical procedures do not perform well or cannot be effectively applied without undue labor. Locally Weighted Regression combines much of the simplicity of linear least squares regression with the flexibility of nonlinear regression. It does this by fitting simple models to localized subsets of the data to build up a function that describes the variation in the data, point by point.
 
+With the equations, the main idea of linear regression is the assumption that:
 
-
-The main idea of linear regression is the assumption that:
-
+<img width="217" alt="image" src="https://user-images.githubusercontent.com/98488324/153696127-71453565-f03a-4b04-bddf-9512e2e60332.png">
 
 If we pre-multiply this equation with a matrix of weights (the "weights" are on the main diagonal and the rest of the elements are 0) we get:
 
+<img width="349" alt="image" src="https://user-images.githubusercontent.com/98488324/153696139-ea560e34-528f-4683-a81d-94f40ba5276b.png">
 
 The distancfe between two independent observations is the Euclidean distance bw the two represented  𝑝− dimensional vectors. The equation is:
 
+<img width="651" alt="image" src="https://user-images.githubusercontent.com/98488324/153696145-f262158e-dd10-47d4-a9b8-cc5b133fb807.png">
 
 We shall have  𝑛  differrent weight vectors because we have  𝑛  different observations.
-
 Important aspect: linear regression can be seen as a linear combination of the observed outputs (values of the dependent variable).
-
 We have:
 
+<img width="276" alt="image" src="https://user-images.githubusercontent.com/98488324/153696158-eb25a77b-e093-41fb-8c17-3463d390becf.png">
 
 We solve for  𝛽  (by assuming that  𝑋𝑇𝑋  is invertible):
 
+<img width="428" alt="image" src="https://user-images.githubusercontent.com/98488324/153696164-f8c5920b-06b9-4792-8955-56e82a22e692.png">
 
 We take the expected value of this equation and obtain:
 
+<img width="231" alt="image" src="https://user-images.githubusercontent.com/98488324/153696168-10bfee30-6312-4f6e-a173-75625e60b8cf.png">
 
 Therefore the predictions we make are:
 
+<img width="249" alt="image" src="https://user-images.githubusercontent.com/98488324/153696171-65bf808d-641b-4bf3-9269-fe3a4694c897.png">
+
+For the locally weighted regression we have:
+
+<img width="316" alt="image" src="https://user-images.githubusercontent.com/98488324/153696198-b83fc443-af89-444b-9a19-cfa95d154109.png">
 
 The big Idea: the predictions we make are a linear combination of the actual observed values of the dependent valuable!
-
 For locally weighted regression,  𝑦̂   is pbtained as a different linear combination of the values of y.
 
 
@@ -41,7 +47,7 @@ Random Forest Regression is a supervised learning algorithm that utilizes ensemb
 
 ![image](https://user-images.githubusercontent.com/98488324/153693726-36f3fe10-9648-4606-92cb-293b6c78a9dd.png)
 
-This is the basic structure of a Random Forest. The trees are parallel with no interaction amongst them. A Random Forest operates by constructing several decision trees during training time and outputting the mean of the classes as the prediction of all the trees. 
+This diagram is the basic structure of a Random Forest. The trees are parallel with no interaction amongst them. A Random Forest operates by constructing several decision trees during training time and outputting the mean of the classes as the prediction of all the trees. 
 
 By default, the decision trees we use here will make their predictions based on the mean value of the target within each leaf of the tree, and the splitting criteria will be based on minimizing the mean square error, MSE.
 
@@ -83,6 +89,7 @@ from sklearn.linear_model import LinearRegression
 def tricubic(x):
   return np.where(np.abs(x)>1,0,70/81*(1-np.abs(x)**3)**3)
 
+# Locally Weighted Regression
 def lowess_reg(x, y, xnew, kern, tau):
     # tau is called bandwidth K((x-x[i])/(2*tau))
     # IMPORTANT: we expect x to the sorted increasingly
@@ -114,7 +121,6 @@ yhat = lowess_reg(x,y,xnew,tricubic,80)
 
 plt.scatter(x,y)
 plt.plot(xnew,yhat,color='red',lw=2)
-
 ```
 
 ![image](https://user-images.githubusercontent.com/98488324/153694807-2bc7665e-df35-4703-a756-44192ccd0ac5.png)
@@ -135,7 +141,7 @@ mse(yhat_test,ytest)
 
 
 ```python
-plt.plot(np.sort(xtest_scale.ravel()),yhat_test)
+plt.plot(np.sort(xtest_scaled.ravel()),yhat_test)
 ```
 ![image](https://user-images.githubusercontent.com/98488324/153695299-b5a1f418-3757-4854-ab90-0a4184959d79.png)
 
