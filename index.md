@@ -205,7 +205,7 @@ Bakshi, C. (Jun 8, 2020). [_Medium_](https://levelup.gitconnected.com/random-for
 
 
 Sicotte, X. (May 24, 2018).
-[Data Blog](https://xavierbourretsicotte.github.io/loess.html)
+[_Data Blog_](https://xavierbourretsicotte.github.io/loess.html)
 
 
 ##### Jekyll Themes
