@@ -1,6 +1,6 @@
 # Concepts and Application of Locally Weighted Regression and Random Forest
 
-## Locally Weighted Regression (Abbreviated "loess" ; "lowess")
+### Locally Weighted Regression (Abbreviated "loess" ; "lowess")
 Locally Weighted Regression is a non-parametric regression method that combines multiple regression models in a k-nearest-neighbor-based meta-model. It addresses situations in which the classical procedures do not perform well or cannot be effectively applied without undue labor. Locally Weighted Regression combines much of the simplicity of linear least squares regression with the flexibility of nonlinear regression. It does this by fitting simple models to localized subsets of the data to build up a function that describes the variation in the data, point by point.
 
 With the equations, the main idea of linear regression is the assumption that:
@@ -41,8 +41,7 @@ The big Idea: the predictions we make are a linear combination of the actual obs
 For locally weighted regression,  𝑦̂   is pbtained as a different linear combination of the values of y.
 
 
-
-## Random Forest
+### Random Forest
 Random Forest Regression is a supervised learning algorithm that utilizes ensemble learning method for regression. Ensemble learning method is a technique that combines predictions from multiple machine learning algorithms to make a more accurate prediction than a single model.
 
 ![image](https://user-images.githubusercontent.com/98488324/153693726-36f3fe10-9648-4606-92cb-293b6c78a9dd.png)
@@ -53,7 +52,7 @@ By default, the decision trees we use here will make their predictions based on 
 
 
 
-## Applications with Real Data
+### Applications with Real Data
 Cars Data (output varable is the mileage): 
 
 ```python
