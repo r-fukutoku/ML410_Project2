@@ -131,7 +131,7 @@ plt.plot(xnew,yhat,color='red',lw=2)
 
 
  
-### Final results: 
+#### Final results: 
 The crossvalidated mean square error 
 determine which method is achieveng the better results.
 
@@ -139,7 +139,7 @@ determine which method is achieveng the better results.
 
 
 
-## Reference for Regressions
+### Reference for Regressions
 Bakshi, C. (Jun 8, 2020). _Medium_.
 https://levelup.gitconnected.com/random-forest-regression-209c0f354c84
 
@@ -147,8 +147,8 @@ Sicotte, X. (May 24, 2018).
 https://xavierbourretsicotte.github.io/loess.html
 
 
-#### Jekyll Themes
+##### Jekyll Themes
 Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/r-fukutoku/Project2/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
 
-#### Support or Contact
+##### Support or Contact
 Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
