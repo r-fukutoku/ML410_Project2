@@ -1,4 +1,4 @@
-# Locally Weighted Regression & Random Forest
+# Concepts & Application of Locally Weighted Regression & Random Forest
 
 ## Locally Weighted Regression (Abbreviated "loess" ; "lowess")
 Locally Weighted Regression is a non-parametric regression method that combines multiple regression models in a k-nearest-neighbor-based meta-model. It addresses situations in which the classical procedures do not perform well or cannot be effectively applied without undue labor. Locally Weighted Regression combines much of the simplicity of linear least squares regression with the flexibility of nonlinear regression. It does this by fitting simple models to localized subsets of the data to build up a function that describes the variation in the data, point by point.
