@@ -2,7 +2,9 @@
 
 ### Locally Weighted Regression (Abbreviated "loess" ; "lowess")
 Locally Weighted Regression is a non-parametric regression method that combines multiple regression models in a k-nearest-neighbor-based meta-model. It addresses situations in which the classical procedures do not perform well or cannot be effectively applied without undue labor. 
+
 Locally Weighted Regression combines much of the simplicity of linear least squares regression with the flexibility of nonlinear regression. 
+
 It does this by fitting simple models to localized subsets of the data to build up a function that describes the variation in the data, point by point.
 
 With the equations, the main idea of linear regression can be expressed as the assumption that:
@@ -18,7 +20,7 @@ The distance between two independent observations is the Euclidean distance betw
 <img width="651" alt="image" src="https://user-images.githubusercontent.com/98488324/153696145-f262158e-dd10-47d4-a9b8-cc5b133fb807.png">
 
 We shall have  𝑛  differrent weight vectors because we have  𝑛  different observations.
-Important aspect: linear regression can be seen as a linear combination of the observed outputs (values of the dependent variable).
+__Important aspect__: linear regression can be seen as a linear combination of the observed outputs (values of the dependent variable).
 We have:
 
 <img width="276" alt="image" src="https://user-images.githubusercontent.com/98488324/153696158-eb25a77b-e093-41fb-8c17-3463d390becf.png">
@@ -39,7 +41,7 @@ For the locally weighted regression, we have:
 
 <img width="316" alt="image" src="https://user-images.githubusercontent.com/98488324/153696198-b83fc443-af89-444b-9a19-cfa95d154109.png">
 
-The big Idea: the predictions we make are a linear combination of the actual observed values of the dependent valuable!
+__The big idea__: the predictions we make are a linear combination of the actual observed values of the dependent valuable.
 For locally weighted regression,  𝑦̂   is obtained as a different linear combination of the values of y.
 
 
