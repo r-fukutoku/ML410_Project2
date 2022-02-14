@@ -167,6 +167,7 @@ dat_test = np.column_stack([xtest_scale,ytest,yhat_test])
 
 sorted_dat_test = dat_test[np.argsort(dat_test[:,0])]
 
+kf = KFold(n_splits=10,shuffle=True,random_state=310)
 mse_lwr = []
 mse_rf = []
 
