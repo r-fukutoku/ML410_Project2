@@ -188,14 +188,14 @@ for idxtrain,idxtest in kf.split(x):
 #### Final results: 
 
 ```python
-np.mean(mse_lwr)
+print("Crossvalidated mean square error of Loess is " + str(np.mean(mse_lwr)))
 ```
-17.584499477691253
+Crossvalidated mean square error of Loess is 17.584499477691253
 
 ```python
-np.mean(mse_rf)
+print("Crossvalidated mean square error of Random Forest is " + str(np.mean(mse_rf)))
 ```
-18.3197148440588
+Crossvalidated mean square error of Random Forest is 18.3197148440588
 
 Since we aim to minimize the crossvalidated mean square error (MSE) for the better results, I conclude that Locally Weighted Regression achieved the better result than Randam Forest. 
 
