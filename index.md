@@ -140,7 +140,7 @@ xtest_scaled = scale.transform(xtest.reshape(-1,1))
 
 yhat_test = lowess_reg(xtrain_scaled.ravel(),ytrain,xtest_scaled,tricubic,0.1)
 
-mse(yhat_test,ytest)
+print(mse(yhat_test,ytest))
 ```
 15.961885966790936
 
@@ -156,7 +156,7 @@ plt.plot(np.sort(xtest_scaled.ravel()),yhat_test)
 rf = RandomForestRegressor(n_estimators=100,max_depth=3)
 rf.fit(xtrain_scaled,ytrain)
 
-mse(ytest,rf.predict(xtest_scale))
+print(mse(ytest,rf.predict(xtest_scale)))
 ```
 15.931305250431844
 
