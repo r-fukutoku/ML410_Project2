@@ -3,7 +3,7 @@
 ### Locally Weighted Regression (Abbreviated "loess" ; "lowess")
 Locally Weighted Regression is a non-parametric regression method that combines multiple regression models in a meta-model based on k-nearest neighbor. It addresses situations in which the classical procedures do not perform well or cannot be effectively applied without undue labor. 
 
-Loess combines much of the simplicity of linear least squares regression with the flexibility of nonlinear regression. 
+Lowess combines much of the simplicity of linear least squares regression with the flexibility of nonlinear regression. 
 It does this by fitting simple models to localized subsets of the data to build up a function that describes the variation in the data, point by point.
 
 With an equation, the main idea of linear regression can be expressed as the assumption that:
@@ -188,16 +188,16 @@ for idxtrain,idxtest in kf.split(x):
 #### Final results: 
 
 ```python
-print("Crossvalidated mean square error of Loess is " + str(np.mean(mse_lwr)))
+print("Crossvalidated mean square error of Lowess is " + str(np.mean(mse_lwr)))
 ```
-Crossvalidated mean square error of Loess is 17.584499477691253
+Crossvalidated mean square error of Lowess is 17.584499477691253
 
 ```python
 print("Crossvalidated mean square error of Random Forest is " + str(np.mean(mse_rf)))
 ```
 Crossvalidated mean square error of Random Forest is 18.3197148440588
 
-Since we aim to minimize the crossvalidated mean square error (MSE) for the better results, I conclude that Locally Weighted Regression achieved the better result than Randam Forest. 
+Since we aim to minimize the crossvalidated mean square error (MSE) for the better results, I conclude that Locally Weighted Regression (Lowess) achieved the better result than Randam Forest. 
 
 
 
