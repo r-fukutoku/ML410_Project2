@@ -197,7 +197,7 @@ print("Crossvalidated mean square error of Random Forest is " + str(np.mean(mse_
 ```
 Crossvalidated mean square error of Random Forest is 18.3197148440588
 
-Since we aim to minimize the crossvalidated mean square error (MSE) for the better results, I conclude that Locally Weighted Regression (Lowess) achieved the better result than Randam Forest. 
+Since we aim to minimize the crossvalidated mean square error (MSE) for the better results, I conclude that Locally Weighted Regression (Lowess) achieved the better result than Random Forest. 
 
 
 
