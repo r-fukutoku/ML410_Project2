@@ -202,11 +202,9 @@ Since we aim to minimize the crossvalidated mean square error (MSE) for the bett
 
 
 ## References
-Bakshi, C. (Jun 8, 2020). [_Medium_](https://levelup.gitconnected.com/random-forest-regression-209c0f354c84). (https://levelup.gitconnected.com/random-forest-regression-209c0f354c84)
+Bakshi, C. (Jun 8, 2020). _Medium._ [https://levelup.gitconnected.com/random-forest-regression-209c0f354c84](https://levelup.gitconnected.com/random-forest-regression-209c0f354c84)
 
-
-Sicotte, X. (May 24, 2018).
-[_Data Blog_](https://xavierbourretsicotte.github.io/loess.html). (https://xavierbourretsicotte.github.io/loess.html)
+Sicotte, X. (May 24, 2018). _Data Blog._ [https://xavierbourretsicotte.github.io/loess.html](https://xavierbourretsicotte.github.io/loess.html)
 
 
 
